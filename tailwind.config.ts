@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        creme: "#E9E3D1",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +18,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };
 export default config;
