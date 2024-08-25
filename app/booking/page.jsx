@@ -1,7 +1,7 @@
 import React from "react";
 import Booking from "../components/booking/Booking";
 
-const booking = () => {
+const Booking = () => {
   return (
     <div className="h-auto w-full">
       <Booking />
@@ -9,4 +9,4 @@ const booking = () => {
   );
 };
 
-export default booking;
+export default Booking;
