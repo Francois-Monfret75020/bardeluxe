@@ -1,3 +1,4 @@
+import { info } from "console";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -16,8 +17,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        calendly: "1650px",
+        footer: "652px",
+        info: "900px",
+      },
     },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };
+
 export default config;

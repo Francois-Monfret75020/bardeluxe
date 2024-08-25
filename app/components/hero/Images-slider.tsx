@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import Image from "next/image";
-import old from "../../../public/old.jpg";
-import Trois from "../../../public/3cocktail.jpg";
+import { IKImage } from "imagekitio-next";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import ScrollDownIcon from "../../ui/ScrolldownIcon";
 
 const Slider = () => {
+  const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [images, setImages] = useState([old, Trois, old]);
   const [loadedImages, setLoadedImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [direction, setDirection] = useState(1); // 1 for forward, -1 for backward
+  const [images, setImages] = useState([
+    "https://ik.imagekit.io/xgjpkseg3/BarCocktail/medeService.jpeg?updatedAt=1724603760219",
+    "https://ik.imagekit.io/xgjpkseg3/BarCocktail/medeService.jpeg?updatedAt=1724603760219",
+    "https://ik.imagekit.io/xgjpkseg3/BarCocktail/medeService.jpeg?updatedAt=1724603760219",
+  ]);
 
   const controls = useAnimation();
 
@@ -33,8 +39,7 @@ const Slider = () => {
   }, [direction]);
 
   return (
-    <div className="overflow-hidden  flex-shrink-0 h-screen w-screen relative gap-4">
-    
+    <div className="overflow-hidden  flex-shrink-0 h-screen w-screen relative">
       <motion.div
         className="flex flex-shrink-0"
         animate={{ x: `-${currentIndex * 100}%` }}
@@ -46,12 +51,13 @@ const Slider = () => {
             className="w-full flex-shrink-0 h-screen relative  overflow-hidden"
           >
             <motion.div
-              className="w-full h-full relative"
+              className="w-full h-screen relative"
               initial={{ scale: 1 }}
               animate={{ scale: 1.15 }}
               transition={{ duration: 10, ease: "linear", repeat: Infinity }}
             >
-              <Image
+              <IKImage
+               urlEndpoint={urlEndpoint}
                 src={src}
                 alt={`Image ${index + 1}`}
                 fill
@@ -63,6 +69,9 @@ const Slider = () => {
           </div>
         ))}
       </motion.div>
+
+      <ScrollDownIcon />
+    
     </div>
   );
 };

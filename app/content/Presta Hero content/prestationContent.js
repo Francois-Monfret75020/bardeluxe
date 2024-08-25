@@ -1,5 +1,4 @@
 import team from "../../../public/team.jpg";
-
 import mariage from "../../../public/marriage.jpg";
 import cocktail from "../../../public/atelier.jpg";
 import private2 from "../../../public/bar-private2.jpg";

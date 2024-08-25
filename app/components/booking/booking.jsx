@@ -1,71 +1,71 @@
 import React from "react";
+import Calendly from "./calendy";
+import { IoLogoWhatsapp } from "react-icons/io5";
+import { LuPhoneCall } from "react-icons/lu";
+import { MdOutlineMailOutline } from "react-icons/md";
 
 const booking = () => {
   return (
     <div
       id="all-booking-type-conainter"
-      className="lg:h-[92vh] h-auto lg:w-screen flex lg:flex-row flex-col "
+      className="  h-auto lg:w-screen   flex lg:flex-row flex-col "
     >
       <div
         id="whatsapp-containeur"
-        className=" flex flex-col  h-auto lg:w-1/3 "
+        className=" flex flex-col h-full lg:h-screen   items-center justify-center  lg:w-1/2  text-center lg:mt-10"
+      >
+        {" "}
+        <h2 className="p-8 py-8 mt-4 font-bold tracking-tight text-xl ">
+          Contactez-nous
+        </h2>
+        <p className="p-4 lg:w-[70%]  lg:height-[40%] w-[85%] leading-8 relative lg:-bottom-[2rem]">
+          Pour obtenir un devis rapidement, il suffit de nous contacter via
+          WhatsApp ou par telephone, email. Vous pouvez aussi directement
+          resever via Calendly. Nous serons ravis de répondre a toute vos
+          questions et de vous fournir un devis dans les plus bref délais. <br/>  <br/>  Merci
+          d’avance ❤️
+          <br /> <br /> Bar Events | Votre prestataire de bars à cocktails.
+        </p>
+        <div
+          id="whatps-content"
+          className=" w-full h-full   items-center flex flex-col justify-center mt-8 gap-y-4 lg:relative lg:top-[-57px]"
+        >
+          <span
+            className=" flex items-center justify-center p-4 rounded-md gap-x-4 w-[30%] min-w-[270px] "
+            style={{ backgroundColor: "#42E45F" }}
+          >
+            {" "}
+            <IoLogoWhatsapp size={25} />
+            <a
+              href="https://wa.me/33631995330"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Via WhatsApp
+            </a>
+          </span>
+          <span className=" flex items-center justify-center p-4 rounded-md gap-x-4 bg-creme w-[30%] min-w-[270px]">
+            {" "}
+            <LuPhoneCall size={25} />
+            <a href="tel:+33631995330">06 31 99 53 30</a>
+          </span>
+          <span className=" flex items-center justify-center p-4 rounded-md gap-x-4 bg-creme w-[30%]  min-w-[270px]">
+            {" "}
+            <MdOutlineMailOutline size={25} />
+            <a href="mailto:cocktail@event.com">cocktail@event.com</a>
+          </span>
+        </div>
+      </div>
+
+      <div
+        id="calendy-containeur"
+        className=" flex flex-col lg:w-1/2 h-full  mt-8  lg:mt-10 "
       >
         <div
-          id="whatsapp"
-          className="bg-red-200 w-full h-[60vh] lg:h-screen flex   flex-col  lg:flex-row  justify-between items-center  "
+          id="calendy-content"
+          className=" w-full h-[100%] bg-transparent items-center flex justify-center"
         >
-          {" "}
-          <div id="fake" style={{ visibility: "hidden" }}>
-            content
-          </div>
-          <div
-            id="whatps-content"
-            className="rounded-full w-[10vh] h-[10vw] bg-white items-center flex justify-center"
-          >
-            <a href="https://wa.me/0649442587">Contact us</a>
-          </div>
-          <div
-            id="or?"
-            className="rounded-full w-[10vh] h-[100px] bg-white  items-center flex justify-center relative -bottom-12 lg:bottom-0 lg:-right-12"
-          >
-            OU
-          </div>
-        </div>
-      </div>
-      <div id="devis-containeur" className=" flex flex-col h-auto lg:w-1/3 ">
-        <div
-          id="devis"
-          className="bg-green-200 w-full h-[60vh] flex lg:h-screen flex-col  lg:flex-row  justify-between items-center"
-        >
-          <div id="fake" style={{ visibility: "hidden" }}>
-            content
-          </div>
-
-          <div
-            id="devis-content"
-            className="rounded-full w-[10vh] h-[10vw] bg-white items-center flex justify-center"
-          >
-            devis
-          </div>
-          <div
-            id="or?"
-            className="rounded-full w-[10vh] h-[100px] bg-white  items-center flex justify-center relative -bottom-12 lg:bottom-0 lg:-right-12"
-          >
-            OU
-          </div>
-        </div>
-      </div>
-      <div id="calendy-containeur" className=" flex flex-col h-auto lg:w-1/3  ">
-        <div
-          id="calendy"
-          className="bg-blue-200  w-full  flex items-center justify-center lg:h-screen  lg:flex-row  h-[60vh]"
-        >
-          <div
-            id="calendy-content"
-            className="rounded-full w-[10vh] h-[10vw] bg-white items-center flex justify-center"
-          >
-            calendy
-          </div>
+          <Calendly />
         </div>
       </div>
     </div>

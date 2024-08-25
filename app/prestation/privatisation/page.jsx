@@ -10,8 +10,9 @@ import { ListPrestaPrivateContent } from "../../content/Presta Page Content/pres
 
 const presta = () => {
   return (
+    
     <main className="min-h-screen w-full">
-      <HeroPrestaPhoto src={HeroPrestaPrivate.src} />
+      <HeroPrestaPhoto src={HeroPrestaPrivate.src} alt={HeroPrestaPrivate.alt}/>
       <HeroPrestaText
         title={HeroPrestaPrivate.title}
         text={HeroPrestaPrivate.text}

@@ -1,27 +1,57 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FlyOutLink from "../../ui/FlyOutLink";
 import FlyOutMenu from "../../ui/FlyOutMenu";
 import Curve from "./Curve";
 import Hamburger from "hamburger-react";
-import { menuSlide, linkAnimation } from "./anim";
+import { menuSlide, linkAnimation } from "../../anim/curveAnim";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
+
 import Link from "next/link";
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
+  const [linkEffect, setlinkEffect] = useState(false);
+  const [linkEffect2, setlinkEffect2] = useState(false);
+  const navRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   const toggleOpen = () => {
     setOpen(!isOpen);
   };
+  const handleClickOutside = (event) => {
+    if (
+      navRef.current &&
+      !navRef.current.contains(event.target) &&
+      hamburgerRef.current &&
+      !hamburgerRef.current.contains(event.target)
+    ) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <>
       {/* Mobile Navbar */}
-      <div className="right-8 bg-creme top-8 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden">
+      <div
+        className="right-8 bg-creme top-8 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden"
+        ref={hamburgerRef}
+      >
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}
@@ -33,19 +63,27 @@ const NavBar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={navRef}
             variants={menuSlide}
             initial="initial"
             animate="enter"
             exit="exit"
-            className="fixed flex h-[50%] bg-black text-white items-center justify-center flex-col w-full opacity-80 z-40"
+            className="fixed flex h-[100%] bg-black text-white items-center justify-around flex-col w-full opacity-80 z-40"
           >
-            <div className="flex items-center justify-start h-[10%] mt-20 text-gray-500 border-b border-gray-500 w-[80%]">
-              <p>Navigation</p>
+            <div className="flex items-center justify-start h-[10%]  text-gray-500 border-b border-gray-500 w-[80%]">
+              <div className="w-full  flex justify-between">
+                {" "}
+                <p>Navigation</p>{" "}
+                <Link href="/" onClick={toggleOpen}>
+                  Home
+                </Link>
+              </div>
             </div>
-            <div className="flex justify-around items-start h-[45%] w-[100%] flex-row text-xl gap-8 mt-10">
+
+            <div className="flex mb:justify-around justify-center  items-center h-[45%] w-[100%] flex-row text-xl gap-8 ">
               <motion.div {...linkAnimation}>
-                <Link href="/equipe" onClick={toggleOpen}>
-                  Equipe
+                <Link href="/info" onClick={toggleOpen}>
+                  Infomation
                 </Link>
               </motion.div>
               <motion.div {...linkAnimation}>
@@ -61,7 +99,7 @@ const NavBar = () => {
                 </Link>
               </motion.div>
             </div>
-            <div className="flex justify-center h-1/6 text-xs gap-8 items-center mb-4">
+            <div className="flex justify-center h-1/8 text-xs gap-8 items-center">
               <motion.div
                 {...linkAnimation}
                 className="flex items-center gap-1"
@@ -108,41 +146,48 @@ const NavBar = () => {
           <div className="flex space-x-8">
             <FlyOutLink FlyOutContent={FlyOutMenu} name={"Prestation"} />
 
-            <Link
-     
-              href="/equipe"
-              className="hover:text-gray-400 transition"
+            <div
+              className=" flex flex-col w-[50%]"
+              onMouseEnter={() => setlinkEffect(true)}
+              onMouseLeave={() => setlinkEffect(false)}
             >
-              Equipe
-            </Link>
-            <Link
-         
-              href="/booking"
-              className="hover:text-gray-400 transition"
+              <Link
+                href="/info"
+                className="hover:text-gray-400 transition justify-center flex items-center"
+              >
+                Qui sommes-nous ?
+              </Link>
+              <span
+                style={{ transform: linkEffect ? "scaleX(1)" : "scaleX(0)" }}
+                className=" mx-auto h-1 left-1/2 w-[170px] origin-left rounded-full bg-white transition-transform duration-300 ease-out"
+              ></span>
+            </div>
+
+            <div
+              className=" flex flex-col w-[50%]"
+              onMouseEnter={() => setlinkEffect2(true)}
+              onMouseLeave={() => setlinkEffect2(false)}
             >
-              Booking
-            </Link>
+              <Link
+                href="/booking"
+                className="hover:text-gray-400 transitio justify-center flex items-center"
+              >
+                Booking
+              </Link>
+              <span
+                style={{ transform: linkEffect2 ? "scaleX(1)" : "scaleX(0)" }}
+                className=" mx-auto h-1 left-1/2 w-[80px] origin-left rounded-full bg-white transition-transform duration-300 ease-out"
+              ></span>
+            </div>
           </div>
           <div className="flex space-x-4">
-            <Link
-              
-              className="hover:text-gray-400 transition"
-              href="/resaux"
-            >
+            <Link className="hover:text-gray-400 transition" href="/resaux">
               <AiFillTikTok size="1.4rem" />
             </Link>
-            <Link
-
-              className="hover:text-gray-400 transition"
-              href="/resaux"
-            >
+            <Link className="hover:text-gray-400 transition" href="/resaux">
               <FaInstagram size="1.4rem" />
             </Link>
-            <Link
-
-              className="hover:text-gray-400 transition"
-              href="/resaux"
-            >
+            <Link className="hover:text-gray-400 transition" href="/resaux">
               <FaFacebook size="1.4rem" />
             </Link>
           </div>

@@ -10,8 +10,9 @@ import { ListPrestaAtelierContent } from "../../content/Presta Page Content/pres
 
 const presta = () => {
   return (
+    
     <main className="min-h-screen w-full">
-      <HeroPrestaPhoto src={HeroPrestaAtelier.src} />
+      <HeroPrestaPhoto src={HeroPrestaAtelier.src}  alt={HeroPrestaAtelier.alt}/>
       <HeroPrestaText
         title={HeroPrestaAtelier.title}
         text={HeroPrestaAtelier.text}

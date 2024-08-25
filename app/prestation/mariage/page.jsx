@@ -9,15 +9,19 @@ import { ListPrestaMariage } from "../../content/Presta Page Content/prestaPageT
 import { ListPrestaMariageContent } from "../../content/Presta Page Content/prestaPageText";
 
 const presta = () => {
-
-
-  
   return (
-    <main className="min-h-screen w-screen">
-      <HeroPrestaPhoto src={HeroPrestaMariage.src} />
+
+
+    <main className="h-full w-screen">
+      <HeroPrestaPhoto
+        src={HeroPrestaMariage.src}
+        alt={HeroPrestaMariage.alt}
+      />
       <HeroPrestaText
         title={HeroPrestaMariage.title}
         text={HeroPrestaMariage.text}
+  
+        type={"mariage"}
       />
       <List
         src={ListPrestaMariage.src}
@@ -25,10 +29,9 @@ const presta = () => {
         textArray={ListPrestaMariage.text}
       />
 
-   
-      <ListContent  content={ListPrestaMariageContent} />
-
+      <ListContent content={ListPrestaMariageContent} />
     </main>
+ 
   );
 };
 

@@ -11,6 +11,7 @@ export const HeroPrestaMariage = {
   title: "nos prestations de bar cocktails pour votre mariage !",
   text: "Vous allez vivre l’un des jours les plus important de votre vie. Vous souhaitez que ce moment reste gravé dans les mémoires. Il le sera. Mais vous savez aussi que ce sont les petits plus, la nouveauté, la surprise qui font en sorte de rendre cette journée encore plus mémorable. Bar Events oeuvre en ce sens. Depuis plus de 8 ans, nos prestations bar à cocktail pour les mariages permettent aux mariés et à leurs invités de vivre les festivités autrement. Que ce soit pour le cocktail d’entrée, le moment de fête ou pour le brunch du lendemain, découvrez l’ensemble de nos prestations cocktails pour votre mariage.",
   src: mariage,
+  alt : "Une mariée en robe blanche qu'on fait sauter en l'air par ses invités lors de son mariage",
 };
 
 export const ListPrestaMariage = {
@@ -54,6 +55,7 @@ export const HeroPrestaAtelier = {
   title: "NOS PRESTATIONS DE BAR COCKTAIL À DOMICILE !",
   text: "Nous vous proposons une large gamme de prestations pour vos événements. Découvrez nos bars éphémères, nos animations cocktails, nos ateliers de mixologie et nos services de bar à cocktails.",
   src: atelier,
+  alt : "atelier coktail avec des participant souriant, mélangeant des ingrédients et suivant les instructions du barman.",
 };
 
 export const ListPrestaAtelier = {
@@ -92,6 +94,7 @@ export const HeroPrestaPro = {
   title: "NOS PRESTATIONS COCKTAIL POUR ENTREPRISE ET TEAM-BUILDING!",
   text: "Nous vous proposons une large gamme de prestations pour vos événements. Découvrez nos bars éphémères, nos animations cocktails, nos ateliers de mixologie et nos services de bar à cocktails.",
   src: team,
+  alt : "Des collègues de bureau en tenue professionnelle trinquant avec des verres de champagne lors d'une célébration",
 };
 
 export const ListPrestaPro = {
@@ -130,6 +133,7 @@ export const HeroPrestaPrivate = {
   title: "NOS PRESTATIONS DE BAR COCKTAIL À DOMICILE !",
   text: "Nous vous proposons une large gamme de prestations pour vos événements. Découvrez nos bars éphémères, nos animations cocktails, nos ateliers de mixologie et nos services de bar à cocktails.",
   src: private2,
+  alt : "Un barman préparant des cocktails sophistiqués chez un particulier, avec divers ingrédients et bouteilles en arrière-plan",
 };
 
 export const ListPrestaPrivate = {

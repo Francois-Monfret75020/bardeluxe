@@ -11,7 +11,7 @@ import { ListPrestaProContent } from "../../content/Presta Page Content/prestaPa
 const presta = () => {
   return (
     <main className="min-h-screen w-full">
-      <HeroPrestaPhoto src={HeroPrestaPro.src} />
+      <HeroPrestaPhoto src={HeroPrestaPro.src}  alt={HeroPrestaPro.alt} />
       <HeroPrestaText title={HeroPrestaPro.title} text={HeroPrestaPro.text} />
       <List
         src={ListPrestaPro.src}
