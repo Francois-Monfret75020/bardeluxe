@@ -1,5 +1,5 @@
 import React from "react";
-import Calendly from "../booking/Calendy";
+import Calendly from "./Calendy";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -15,7 +15,7 @@ const booking = () => {
         className=" flex flex-col h-full lg:h-screen   items-center justify-center  lg:w-1/2  text-center lg:mt-10"
       >
         {" "}
-        <h2 className="p-8 py-8 mt-4 font-bold tracking-tight text-xl ">
+        <h2 className="p-8 py-8 mt-4 font-bold tracking-tight text-xl pt-20 lg:pt-10 ">
           Contactez-nous
         </h2>
         <p className="p-4 lg:w-[70%]  lg:height-[40%] w-[85%] leading-8 relative lg:-bottom-[2rem]">
