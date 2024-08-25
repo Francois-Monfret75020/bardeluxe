@@ -1,5 +1,5 @@
 import React from "react";
-import Calendy from "./Calendy";
+import Calendy from "./Calendly";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
