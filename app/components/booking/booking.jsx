@@ -1,5 +1,5 @@
 import React from "react";
-import Calendly from "./Calendy";
+import Calendy from "./Calendy";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -65,7 +65,7 @@ const booking = () => {
           id="calendy-content"
           className=" w-full h-[100%] bg-transparent items-center flex justify-center"
         >
-          <Calendly />
+          <Calendy />
         </div>
       </div>
     </div>
