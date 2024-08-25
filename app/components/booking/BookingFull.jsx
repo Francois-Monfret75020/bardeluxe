@@ -4,7 +4,7 @@ import { IoLogoWhatsapp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
 
-const Booking = () => {
+const BookingFull = () => {
   return (
     <div
       id="all-booking-type-conainter"
@@ -72,4 +72,4 @@ const Booking = () => {
   );
 };
 
-export default Booking;
+export default BookingFull;
