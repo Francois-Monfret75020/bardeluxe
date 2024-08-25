@@ -8,7 +8,7 @@ import { HeroPrestaPro } from "../../content/Presta Page Content/prestaPageText"
 import { ListPrestaPro } from "../../content/Presta Page Content/prestaPageText";
 import { ListPrestaProContent } from "../../content/Presta Page Content/prestaPageText";
 
-const presta = () => {
+const Presta = () => {
   return (
     <main className="min-h-screen w-full">
       <HeroPrestaPhoto src={HeroPrestaPro.src}  alt={HeroPrestaPro.alt} />
@@ -23,4 +23,4 @@ const presta = () => {
   );
 };
 
-export default presta;
+export default Presta;

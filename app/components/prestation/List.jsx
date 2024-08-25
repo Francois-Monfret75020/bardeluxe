@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const list = ({ title, textArray, src }) => {
+const List = ({ title, textArray, src }) => {
   return (
     <div className="relative flex-col lg:h-[55vh] md:h-[50vh] h-[40rem] flex ">
       <Image src={src} alt="Background Image" fill className="object-cover" />
@@ -65,4 +65,4 @@ const list = ({ title, textArray, src }) => {
   );
 };
 
-export default list;
+export default List;

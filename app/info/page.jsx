@@ -7,7 +7,7 @@ import { infoData, infoData2 } from "../content/Info content/infoContent";
 import ListContent from "../components/prestation/ListContent";
 
 
-const info = () => {
+const Info = () => {
 
 
 
@@ -38,4 +38,4 @@ const info = () => {
   );
 };
 
-export default info;
+export default Info;

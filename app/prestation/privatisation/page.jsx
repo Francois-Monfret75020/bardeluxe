@@ -8,7 +8,7 @@ import { HeroPrestaPrivate } from "../../content/Presta Page Content/prestaPageT
 import { ListPrestaPrivate } from "../../content/Presta Page Content/prestaPageText";
 import { ListPrestaPrivateContent } from "../../content/Presta Page Content/prestaPageText";
 
-const presta = () => {
+const Presta = () => {
   return (
     
     <main className="min-h-screen w-full">
@@ -28,4 +28,4 @@ const presta = () => {
   );
 };
 
-export default presta;
+export default Presta;

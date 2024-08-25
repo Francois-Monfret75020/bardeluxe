@@ -4,7 +4,7 @@ import { IoLogoWhatsapp } from "react-icons/io5";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
 
-const booking = () => {
+const Booking = () => {
   return (
     <div
       id="all-booking-type-conainter"
@@ -22,8 +22,8 @@ const booking = () => {
           Pour obtenir un devis rapidement, il suffit de nous contacter via
           WhatsApp ou par telephone, email. Vous pouvez aussi directement
           resever via Calendly. Nous serons ravis de répondre a toute vos
-          questions et de vous fournir un devis dans les plus bref délais. <br/>  <br/>  Merci
-          d’avance ❤️
+          questions et de vous fournir un devis dans les plus bref délais.{" "}
+          <br /> <br /> Merci d’avance ❤️
           <br /> <br /> Bar Events | Votre prestataire de bars à cocktails.
         </p>
         <div
@@ -72,4 +72,4 @@ const booking = () => {
   );
 };
 
-export default booking;
+export default Booking;
