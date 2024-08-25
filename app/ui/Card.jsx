@@ -33,7 +33,7 @@ const Card = ({ src, alt, description, buttonText, href }) => {
               className="absolute inset-0 object-cover"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50">
-              <p className="text-white font-extralight text-2xl mb-8">
+              <p className="text-white font-extralight text-2xl mb-8 text-center">
                 {description}
               </p>
               <Link href={href} legacyBehavior>

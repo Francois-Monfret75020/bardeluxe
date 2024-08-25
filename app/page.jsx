@@ -6,7 +6,7 @@ import Hero from "./components/hero/Hero";
 import { prestaData } from "./content/Presta Hero content/prestationContent";
 import Card from "./ui/Card"; // Assurez-vous que le chemin est correct
 import Preloader from "./components/preloader/preloader";
-import { CldUploadWidget } from "next-cloudinary";
+
 
 const Home = () => {
   const [isLoaded, setIsLoading] = useState(true);
@@ -27,9 +27,9 @@ const Home = () => {
   return (
     <>
       <main className="relative">
-        {/* <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait">
           {isLoaded && <Preloader />}
-        </AnimatePresence> */}
+        </AnimatePresence>
         <section className="h-screen">
           <Slider />
         </section>
