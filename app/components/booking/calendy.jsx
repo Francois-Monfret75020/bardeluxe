@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { InlineWidget } from "react-calendly";
 
-const calendy = () => {
+const Calendy = () => {
   useEffect(() => {
     const handleScriptError = (event) => {
       if (event.target.src.includes("fbevents.js")) {
@@ -40,4 +40,4 @@ const calendy = () => {
   );
 };
 
-export default calendy;
+export default Calendy;
