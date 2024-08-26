@@ -2,16 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.body {
-  height: 100%;
-  transition-property: opacity, background, transform, filter;
-  transition-timing-function: ease-in-out;
-  transition-duration: 500ms;
-}
-
-.pages-transition {
-  opacity: 0;
-  background: black;
-  transform: translateY(40px);
-  filter: blur(12px);
-}

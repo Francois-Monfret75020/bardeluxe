@@ -38,7 +38,7 @@ const AnimatedCunter = ({
     });
   }, [ref, isInView]);
 
-  return <span ref={ref} />;
+  return <span className="w-[4rem] h-8 flex justify-center items-center" ref={ref} />;
 };
 
 export default AnimatedCunter;

@@ -33,7 +33,7 @@ export default function RootLayout({
           <NavBar />
         </header>
         <main className="flex flex-col ">{children}</main>
-        <div className="fixed top-8 left-12 lg:top-auto lg:bottom-12">
+        <div className="fixed top-10 left-12 lg:top-auto lg:bottom-12">
         <BookingButton text="Booking" />
       </div>
         <footer className="h-[600px] sm:h-[300px] p-4 bg-creme">

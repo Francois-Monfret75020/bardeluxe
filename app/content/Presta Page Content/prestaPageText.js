@@ -15,7 +15,7 @@ export const HeroPrestaMariage = {
 };
 
 export const ListPrestaMariage = {
-  title: "LES PRESTATIONS COCKTAIL MARIAGE  ce sont :",
+  title: "LES PRESTATIONS COCKTAIL MARIAGE   ce sont :",
   title2: [
     "Des bars à cocktails pour la surprise, le goût et l’animation",
     "Des bars à cocktails pour la surprise, le goût et l’animation",
@@ -59,7 +59,7 @@ export const HeroPrestaAtelier = {
 };
 
 export const ListPrestaAtelier = {
-  title: "Les prestations de nos atelier cocktailes sont :",
+  title: "Les prestations de nos   atelier cocktailes sont :",
   text: [
     "Des bars à cocktails éphémères et des animations mariage",
     "Un large choix de cocktails et spiritueux à la carte",

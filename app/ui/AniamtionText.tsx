@@ -10,7 +10,12 @@ type AniamtionTextProps = {
 
 const defaultAnimation = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.1 }, ease: [0.76, 0, 0.24, 1], },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.1 },
+    ease: [0.76, 0, 0.24, 1],
+  },
 };
 
 const AniamtionText = ({
@@ -23,9 +28,8 @@ const AniamtionText = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1, once: once });
 
+  console.log(once);
 
-  console.log(once );
-  
   return (
     <Wrapper className={className}>
       <span className="sr-only">{text}</span>
@@ -47,18 +51,12 @@ const AniamtionText = ({
         {textArray.map((line, lineIndex) => (
           <span key={lineIndex} className="block">
             {line.split(" ").map((word, wordIndex) => (
-              <motion.span key={wordIndex} style={{ display: "inline-block", marginRight: "0.25em" }}>
-                {word.split("").map((char, charIndex) => (
-                  <motion.span
-                    key={charIndex}
-                    variants={defaultAnimation}
-                    style={{ display: "inline-block" }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-                {/* Add a space after each word */}
-                {wordIndex < line.split(" ").length - 1 && " "}
+              <motion.span
+                key={wordIndex}
+                variants={defaultAnimation}
+                style={{ display: "inline-block" }}
+              >
+                {word}&nbsp;
               </motion.span>
             ))}
           </span>

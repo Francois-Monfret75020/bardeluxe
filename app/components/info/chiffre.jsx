@@ -6,7 +6,7 @@ import AnimatedCunter from "@/app/ui/AnimatedCunter";
 
 const Chiffre = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 1 });
+  const isInView = useInView(ref, { amount: 0.7 });
   const [startAnimation, setStartAnimation] = useState(false);
 
   useEffect(() => {
@@ -18,60 +18,32 @@ const Chiffre = () => {
   return (
     <div
       id="chiffre-containeur"
-      className="flex flex-col w-full info:h-[30vh] h-[900px]  bg-creme border justify-center info:justify-evenly items-center"
+      className="flex flex-col w-full info:h-[30vh]  h-[400px] bg-creme border justify-center info:justify-evenly items-center text-sm"
       ref={ref}
     >
-      <div
-        id="row1"
-        className="flex info:flex-row lg:justify-center lg:h-40 flex-col gap-y-2 w-full info:item-center"
-      >
-        {experienceArray.slice(0, 3).map((item, index) => (
+      <div className="grid grid-cols-2 info:grid-cols-3  w-full">
+        {experienceArray.map((item, index) => (
           <div
             key={index}
-            className="lg:w-[25%] info:h-full  w-full h-32 flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center p-4 border"
           >
-            <div className="flex relative justify-start w-[12rem] items-center">
-              <div className="absolute -left-8 -top-2 text-gray-500 font-bold text-3xl">
-                +
-              </div>
-              <div className="flex w-48 font-bold text-gray-500 text-2xl font-mono">
-                {startAnimation && (
-                  <AnimatedCunter 
-                    from={0}
-                    to={item.yearsOfExperience}
-                    isInView={isInView}
-                  />
-                )}
+            <div className="flex relative justify-center w-full items-center">
+              <div className="flex w-full font-bold text-gray-500 text-xl font-mono justify-center items-center">
+                <div className="relative -left-[2rem] text-gray-500 font-bold text-xl">
+                  +
+                </div>
+                <div className="h-10 w-4 flex justify-center items-center">
+                  {startAnimation && (
+                    <AnimatedCunter
+                      from={0}
+                      to={item.yearsOfExperience}
+                      isInView={isInView}
+                    />
+                  )}
+                </div>
               </div>
             </div>
-            <div className=" flex justify-start w-48">{item.info}</div>
-          </div>
-        ))}
-      </div>
-      <div
-        id="row2"
-        className="flex info:flex-row lg:justify-center lg:h-40 flex-col gap-y-2 w-full"
-      >
-        {experienceArray.slice(3, 6).map((item, index) => (
-          <div
-            key={index}
-            className="lg:w-[25%] w-full  info:h-full h-32 flex flex-col justify-center items-center"
-          >
-            <div className="flex relative justify-start w-[12rem] items-center ">
-              <div className="absolute -left-8 -top-2 text-gray-500 font-bold text-3xl">
-                +
-              </div>
-              <div className="flex w-48 font-bold text-gray-500 text-2xl ">
-                {startAnimation && (
-                  <AnimatedCunter 
-                    from={0} 
-                    to={item.yearsOfExperience} 
-                    isInView={isInView}
-                  />
-                )}
-              </div>
-            </div>
-            <div className=" flex justify-start  w-[15rem] ml-12">
+            <div className="flex justify-center min-w-4  text-center">
               {item.info}
             </div>
           </div>

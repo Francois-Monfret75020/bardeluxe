@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, use } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FlyOutLink from "../../ui/FlyOutLink";
 import FlyOutMenu from "../../ui/FlyOutMenu";
@@ -9,7 +9,7 @@ import { menuSlide, linkAnimation } from "../../anim/curveAnim";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
-
+import "./style.css";
 import Link from "next/link";
 
 const NavBar = () => {
@@ -20,43 +20,30 @@ const NavBar = () => {
   const hamburgerRef = useRef(null);
 
   const toggleOpen = () => {
-    setOpen((prevOpen) => {
-      const newOpen = !prevOpen;
-      if (newOpen) {
-        window.scrollTo(0, 0);
-      }
-      return newOpen;
-    });
-  };
-  const handleClickOutside = (event) => {
-    if (
-      navRef.current &&
-      !navRef.current.contains(event.target) &&
-      hamburgerRef.current &&
-      !hamburgerRef.current.contains(event.target)
-    ) {
-      setOpen(false);
-    }
+    setOpen(!isOpen);
+    zeroScrool()
   };
 
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+
+  const zeroScroll = () => {
+    if (!isOpen) {
+        // document.body.classList.add("no-scroll");
+        document.body.style.overflow = 'hidden';
+        console.log("open");
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+        // document.body.classList.remove("no-scroll");
+        document.body.style.overflow = 'auto';
+        console.log("close");
     }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
+};
 
   return (
     <>
       {/* Mobile Navbar */}
       <div
-        className="right-8 bg-creme top-8 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden"
+        className="right-8 bg-creme top-8 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden "
         ref={hamburgerRef}
+        onClick={zeroScroll}
       >
         <Hamburger
           toggled={isOpen}

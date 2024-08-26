@@ -10,12 +10,32 @@ import Preloader from "./components/preloader/preloader";
 
 const Home = () => {
   const [isLoaded, setIsLoading] = useState(true);
+  const [hasVisited, setHasVisited] = useState(false);
 
+  useEffect(() => {
+      // Lire le cookie du navigateur
+      const visitCookie = document.cookie.split('; ').find(row => row.startsWith('hasVisited='));
+
+      if (visitCookie) {
+          setHasVisited(true);
+      } else {
+          // Si le cookie n'existe pas, c'est la première visite
+          document.cookie = 'hasVisited=true; max-age=' + 30 * 24 * 60 * 60 + '; path=/';
+          setHasVisited(false);
+      }
+  }, []);
+
+console.log(hasVisited);
 
 
 
   useEffect(() => {
     (async () => {
+
+      if (hasVisited) {
+        setIsLoading(false);
+        return;
+      }
       setTimeout(() => {
         setIsLoading(false);
 
@@ -27,9 +47,9 @@ const Home = () => {
   return (
     <>
       <main className="relative">
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait">
           {isLoaded && <Preloader />}
-        </AnimatePresence>
+        </AnimatePresence> */}
         <section className="h-screen">
           <Slider />
         </section>
