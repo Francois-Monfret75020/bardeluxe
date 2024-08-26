@@ -61,7 +61,7 @@ const NavBar = () => {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="fixed flex h-[100%] bg-black text-white items-center justify-around flex-col w-full opacity-80 z-40"
+            className="fixed flex h-[100vh] bg-black text-white items-center justify-around flex-col w-full opacity-80 z-40 top-0 left-0"
           >
             <div className="flex items-center justify-start h-[10%]  text-gray-500 border-b border-gray-500 w-[80%]">
               <div className="w-full  flex justify-between">
