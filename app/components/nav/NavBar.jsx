@@ -76,7 +76,7 @@ const NavBar = () => {
             <div className="flex mb:justify-around justify-center  items-center h-[45%] w-[100%] flex-row text-xl gap-8 ">
               <motion.div {...linkAnimation}>
                 <Link href="/info" onClick={toggleOpen}>
-                  Infomation
+                  Infomation  
                 </Link>
               </motion.div>
               <motion.div {...linkAnimation}>
