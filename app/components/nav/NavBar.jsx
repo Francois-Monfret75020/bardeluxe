@@ -20,7 +20,13 @@ const NavBar = () => {
   const hamburgerRef = useRef(null);
 
   const toggleOpen = () => {
-    setOpen(!isOpen);
+    setOpen((prevOpen) => {
+      const newOpen = !prevOpen;
+      if (newOpen) {
+        window.scrollTo(0, 0);
+      }
+      return newOpen;
+    });
   };
   const handleClickOutside = (event) => {
     if (
