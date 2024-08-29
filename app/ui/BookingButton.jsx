@@ -44,7 +44,7 @@ const BookingButton = ({ text }) => {
           repeatType: "reverse",
         }}
         style={{ opacity }}
-        className="px-6 py-2 lg:bg-slate-600 text-sm bg-slate-500 text-white rounded transform hover:-translate-y-1 transition duration-400 font-thin"
+        className="px-6 py-2 bg-greeno text-sm  text-white rounded transform hover:-translate-y-1 transition duration-400 font-thin"
       >
         {text}
       </motion.button>

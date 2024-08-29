@@ -6,6 +6,8 @@ type AniamtionTextProps = {
   el: keyof JSX.IntrinsicElements;
   className: string;
   once?: boolean;
+  left?: boolean;
+  right?: boolean;
 };
 
 const defaultAnimation = {
@@ -28,7 +30,7 @@ const AniamtionText = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1, once: once });
 
-  console.log(once);
+
 
   return (
     <Wrapper className={className}>

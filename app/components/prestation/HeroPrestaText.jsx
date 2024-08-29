@@ -13,7 +13,7 @@ const HeroPrestaText = ({ title, text, }) => {
       <AniamtionText
         text={title}
         el="h1"
-        className="text-xl lg:text-3xl font-thin uppercase lg:w-[50vw] leading-relaxed"
+        className="title"
         once={true}
       />
       <div className="flex flex-col w-full items-center justify-center lg:w-[50vw] h-12 gap-y-0.5">
@@ -21,9 +21,9 @@ const HeroPrestaText = ({ title, text, }) => {
         <div className="flex lg:w-1/4 w-2/4 h-0.5 bg-creme"></div>
       </div>
       {text && (
-        <p className="leading-10 p-4 text-sm font-extralight lg:w-[60vw]">
-          {text}
-        </p>
+        <div className="leading-10 p-4 text-sm  font-extralight lg:w-[60vw]">
+         <p className="text">{text}</p> 
+        </div>
       )}
     </div>
   );

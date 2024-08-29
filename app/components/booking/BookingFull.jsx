@@ -28,7 +28,7 @@ const BookingFull = () => {
         </p>
         <div
           id="whatps-content"
-          className=" w-full h-full   items-center flex flex-col justify-center mt-8 gap-y-4 lg:relative lg:top-[-57px]"
+          className=" w-full h-full   items-center flex flex-col justify-center mt-8 gap-y-4 lg:relative lg:top-[20px]"
         >
           <span
             className=" flex items-center justify-center p-4 rounded-md gap-x-4 w-[30%] min-w-[270px] "

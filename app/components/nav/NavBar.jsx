@@ -21,27 +21,26 @@ const NavBar = () => {
 
   const toggleOpen = () => {
     setOpen(!isOpen);
-    zeroScrool()
+    zeroScrool();
   };
-
 
   const zeroScroll = () => {
     if (!isOpen) {
-        // document.body.classList.add("no-scroll");
-        document.body.style.overflow = 'hidden';
-        console.log("open");
+      // document.body.classList.add("no-scroll");
+      document.body.style.overflow = "hidden";
+      console.log("open");
     } else {
-        // document.body.classList.remove("no-scroll");
-        document.body.style.overflow = 'auto';
-        console.log("close");
+      // document.body.classList.remove("no-scroll");
+      document.body.style.overflow = "auto";
+      console.log("close");
     }
-};
+  };
 
   return (
     <>
       {/* Mobile Navbar */}
       <div
-        className="right-8 bg-creme top-8 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden "
+        className="right-8 bg-greeno top-8 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden "
         ref={hamburgerRef}
         onClick={zeroScroll}
       >
@@ -61,25 +60,22 @@ const NavBar = () => {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="fixed flex h-[100vh] bg-black text-white items-center justify-around flex-col w-full opacity-80 z-40 top-0 left-0"
+            className="fixed flex h-[100vh] bg-black bg-opacity-90 text-white items-center justify-around flex-col w-full z-40 top-0 left-0"
           >
             <div className="flex items-center justify-start h-[10%]  text-gray-500 border-b border-gray-500 w-[80%]">
-              <div className="w-full  flex justify-between">
-                {" "}
-                <p>Navigation</p>{" "}
-                <Link href="/" onClick={toggleOpen}>
-                  Home
-                </Link>
-              </div>
+              {" "}
+              <Link href="/" onClick={toggleOpen}>
+                Home
+              </Link>
             </div>
 
-            <div className="flex mb:justify-around justify-center  items-center h-[45%] w-[100%] flex-row text-xl gap-8 ">
+            <div className="flex mb:justify-around justify-center  items-center h-[45%] w-[100%] flex-row text-xl gap-8 relative top-[-60px]">
               <motion.div {...linkAnimation}>
                 <Link href="/info" onClick={toggleOpen}>
-                  Infomation  
+                  Infomation
                 </Link>
               </motion.div>
-              <motion.div {...linkAnimation}>
+              <motion.div {...linkAnimation} className="opacity-100">
                 <FlyOutLink
                   FlyOutContent={FlyOutMenu}
                   toggleOpen={toggleOpen}
@@ -129,11 +125,11 @@ const NavBar = () => {
       {/* Desktop Navbar */}
 
       <div
-        className="hidden lg:flex  w-full bg-black text-white "
+        className="hidden lg:flex  w-full bg-greeno text-white  "
         style={{ zIndex: 50 }}
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-8">
-          <Link href="/" className="text-lg font-bold">
+          <Link href="/" className="text-lg font-bold hover:text-creme">
             Brand
           </Link>
           <div className="flex space-x-8">
@@ -146,7 +142,7 @@ const NavBar = () => {
             >
               <Link
                 href="/info"
-                className="hover:text-gray-400 transition justify-center flex items-center"
+                className=" transition justify-center flex items-center "
               >
                 Qui sommes-nous ?
               </Link>
@@ -163,7 +159,7 @@ const NavBar = () => {
             >
               <Link
                 href="/booking"
-                className="hover:text-gray-400 transitio justify-center flex items-center"
+                className=" justify-center flex items-center "
               >
                 Booking
               </Link>
@@ -174,13 +170,13 @@ const NavBar = () => {
             </div>
           </div>
           <div className="flex space-x-4">
-            <Link className="hover:text-gray-400 transition" href="/resaux">
+            <Link className="hover:text-creme transition" href="/resaux">
               <AiFillTikTok size="1.4rem" />
             </Link>
-            <Link className="hover:text-gray-400 transition" href="/resaux">
+            <Link className="hover:text-creme transition" href="/resaux">
               <FaInstagram size="1.4rem" />
             </Link>
-            <Link className="hover:text-gray-400 transition" href="/resaux">
+            <Link className="hover:text-creme transition" href="/resaux">
               <FaFacebook size="1.4rem" />
             </Link>
           </div>

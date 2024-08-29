@@ -16,6 +16,7 @@ const VideoHero = () => {
         urlEndpoint={urlEndpoint}
         path="/BarCocktail/mederic.mp4?updatedAt=1724603760736"
         autoPlay
+        playsInline
         controls={false}  // Optionnel : pour masquer les contrôles de la vidéo
         muted  // Optionnel : pour démarrer la vidéo en mode muet
         className="w-full h-full object-cover"

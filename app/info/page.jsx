@@ -19,6 +19,7 @@ const Info = () => {
         height={"100vh"}
         text={true}
         alt={infoData.alt}
+        info={true}
       />
       <HeroPrestaText
         title={infoData.heroTitlle}

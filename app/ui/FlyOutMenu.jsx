@@ -13,7 +13,7 @@ const FlyOutMenu = ({ toggleOpen }) => {
   }, []);
 
   return (
-    <div className="flex flex-col  p-6 shadow-xl gap-x-6">
+    <div className="flex flex-col h-auto p-6 shadow-xl gap-x-6">
       {data.map((item, index) => (
         <div
           key={index}
@@ -21,7 +21,7 @@ const FlyOutMenu = ({ toggleOpen }) => {
         >
           <Link href={item.link} onClick={toggleOpen}>
             <div className="flex flex-col items-center justify-center relative cursor-pointer h-full">
-              <span className=" top-12   text-center bg-opacity-50 text-black p-1 hover:text-gray-500">
+              <span className=" top-12   text-center bg-opacity-50 text-white hover:text-gray-500 p-1">
                 {item.navTitlle}
               </span>
             </div>

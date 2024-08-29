@@ -1,4 +1,5 @@
 import { info } from "console";
+import { Oswald } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,10 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        oswald: ["Oswald", "serif"],
+      },
       colors: {
         creme: "#E9E3D1",
-        greeno: "#76FF0F",
+        greeno: "#A8BBA0",
         blacko: "#001D1B",
+   
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

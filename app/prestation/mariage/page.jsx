@@ -16,6 +16,7 @@ const presta = () => {
       <HeroPrestaPhoto
         src={HeroPrestaMariage.src}
         alt={HeroPrestaMariage.alt}
+        info={false}
       />
       <HeroPrestaText
         title={HeroPrestaMariage.title}

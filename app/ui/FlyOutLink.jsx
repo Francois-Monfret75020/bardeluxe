@@ -14,7 +14,7 @@ const FlyoutLink = ({ name, FlyOutContent, toggleOpen }) => {
       onMouseLeave={() => setOpen(false)}
       className="h-fit w-fit relative z-50 "
     >
-      <div className="hover:text-gray-400  transition relative">
+      <div className=" cursor-pointer  transition relative">
         {name}
         <span
           style={{ transform: showFlyOut ? "scaleX(1)" : "scaleX(0)" }}
@@ -29,10 +29,10 @@ const FlyoutLink = ({ name, FlyOutContent, toggleOpen }) => {
             exit={{ opacity: 0, y: 20 }}
             style={{ x: "-50%" }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute bg-white text-black top-12 border left-1/2 rounded-s "
+            className="absolute bg-greeno top-12 border left-1/2 rounded-s "
           >
             {" "}
-            <div className="absolute -top-6 left-0 h-6 right-0 bg-transparent" />{" "}
+            <div className="absolute -top-6 left-0 h-6 right-0 bg-transparent text-white" />{" "}
             <FlyOutContent toggleOpen={toggleOpen} />{" "}
           </motion.div>
         )}

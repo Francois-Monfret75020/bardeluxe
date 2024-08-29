@@ -12,7 +12,7 @@ const Presta = () => {
   return (
     
     <main className="min-h-screen w-full">
-      <HeroPrestaPhoto src={HeroPrestaPrivate.src} alt={HeroPrestaPrivate.alt}/>
+      <HeroPrestaPhoto src={HeroPrestaPrivate.src} alt={HeroPrestaPrivate.alt} info={false}/>
       <HeroPrestaText
         title={HeroPrestaPrivate.title}
         text={HeroPrestaPrivate.text}

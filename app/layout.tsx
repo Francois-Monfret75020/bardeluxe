@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/nav/NavBar.jsx";
 import BookingButton from "./ui/BookingButton";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
+import { Montserrat, Oswald } from "next/font/google";
+
+export const montserrat = Montserrat({
+    subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "500", "600", "700"],
+    style: ["normal", "italic"],
+    variable: "--font-montserrat",
+  });
+  
+  export const oswald = Oswald({
+    weight: ["200", "300", "400", "500", "600", "700"],
+    subsets: ["latin"],
+    variable: "--font-oswald",
+  });
+
+
 
 export const metadata: Metadata = {
   title: "Bar événementiel mariage",
@@ -28,14 +38,17 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Add structured data here */}
       </head>
-      <body suppressHydrationWarning={true} className={montserrat.className}>
+      <body
+        suppressHydrationWarning={true}
+        className={`${montserrat.variable} ${oswald.variable}`}
+      >
         <header className="sticky top-0 z-10">
           <NavBar />
         </header>
         <main className="flex flex-col ">{children}</main>
-        <div className="fixed bottom-10 right-6 lg:top-auto lg:bottom-12">
-        <BookingButton text="Booking" />
-      </div>
+        <div className="fixed bottom-4 right-4 opacity-80 lg:top-auto lg:bottom-12">
+          <BookingButton text="Booking" />
+        </div>
         <footer className="h-[600px] sm:h-[300px] p-4 bg-creme">
           <Footer />
         </footer>
