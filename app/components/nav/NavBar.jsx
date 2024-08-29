@@ -40,7 +40,7 @@ const NavBar = () => {
     <>
       {/* Mobile Navbar */}
       <div
-        className="right-8 bg-greeno top-8 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden "
+        className=" bg-greeno top-8 right-4 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden "
         ref={hamburgerRef}
         onClick={zeroScroll}
       >
