@@ -48,3 +48,16 @@ html {
     font-size: 1.875rem; /* text-3xl */
   }
 }
+
+/* globals.css */
+body {
+  touch-action: manipulation;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  touch-action: manipulation;
+}
