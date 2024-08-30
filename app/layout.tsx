@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
         {/* Add structured data here */}
       </head>
       <body
@@ -46,7 +46,7 @@ export default function RootLayout({
           <NavBar />
         </header>
         <main className="flex flex-col ">{children}</main>
-        <div className="fixed bottom-4 right-4 opacity-80 lg:top-auto lg:bottom-12">
+        <div className="fixed bottom-4 right-4 z-50  opacity-80 lg:top-auto lg:bottom-6">
           <BookingButton text="Booking" />
         </div>
         <footer className="h-[600px] sm:h-[300px] p-4 bg-creme">

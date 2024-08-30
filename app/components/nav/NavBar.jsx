@@ -125,7 +125,7 @@ const NavBar = () => {
       {/* Desktop Navbar */}
 
       <div
-        className="hidden lg:flex  w-full bg-greeno text-white  "
+        className="hidden lg:flex h-[6vh] min-h-[2.5rem] w-full bg-greeno text-white  "
         style={{ zIndex: 50 }}
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-8">
@@ -136,36 +136,36 @@ const NavBar = () => {
             <FlyOutLink FlyOutContent={FlyOutMenu} name={"Prestation"} />
 
             <div
-              className=" flex flex-col w-[50%]"
+              className=" flex flex-col "
               onMouseEnter={() => setlinkEffect(true)}
               onMouseLeave={() => setlinkEffect(false)}
             >
               <Link
                 href="/info"
-                className=" transition justify-center flex items-center "
+                className=" transition justify-center flex items-center hover:text-creme "
               >
                 Qui sommes-nous ?
               </Link>
               <span
                 style={{ transform: linkEffect ? "scaleX(1)" : "scaleX(0)" }}
-                className=" mx-auto h-1 left-1/2 w-[170px] origin-left rounded-full bg-white transition-transform duration-300 ease-out"
+                className=" mx-auto h-1 left-1/2 w-[145px] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
               ></span>
             </div>
 
             <div
-              className=" flex flex-col w-[50%]"
+              className=" flex flex-col "
               onMouseEnter={() => setlinkEffect2(true)}
               onMouseLeave={() => setlinkEffect2(false)}
             >
               <Link
                 href="/booking"
-                className=" justify-center flex items-center "
+                className=" justify-center flex items-center hover:text-creme"
               >
                 Booking
               </Link>
               <span
                 style={{ transform: linkEffect2 ? "scaleX(1)" : "scaleX(0)" }}
-                className=" mx-auto h-1 left-1/2 w-[80px] origin-left rounded-full bg-white transition-transform duration-300 ease-out"
+                className=" mx-auto h-1 left-1/2 w-[62px] origin-left rounded-full  bg-creme  transition-transform duration-300 ease-out"
               ></span>
             </div>
           </div>

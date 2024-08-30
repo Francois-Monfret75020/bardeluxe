@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { IKImage } from "imagekitio-next";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 
@@ -8,63 +9,84 @@ const slider1 = [
   "BarCocktail/medeBG2.jpeg?updatedAt=1724603759907",
   "BarCocktail/team2.jpg?updatedAt=1724603760554",
   "BarCocktail/medeService.jpeg?updatedAt=1724603760219",
+  "BarCocktail/medeService.jpeg?updatedAt=1724603760219",
 ];
 const slider2 = [
   "BarCocktail/medericFlame.jpeg?updatedAt=1724603760182",
   "BarCocktail/team2.jpg?updatedAt=1724603760554",
   "BarCocktail/WhatsApp%20Image%202024-08-26%20at%2020.17.45.jpeg?updatedAt=1724696378212",
+  "BarCocktail/medeService.jpeg?updatedAt=1724603760219",
 ];
 
 function SliderHero() {
-  return (
-    <div className="flex flex-col gap-[3vw] relative mt-[200px] bg-red-400 z-[1] overflow-hidden">
-      <div className="flex relative gap-[3vw] w-full overflow-hidden">
-        {slider1.map((slide, index) => {
-          console.log(slide); // Ajout du console.log pour afficher la valeur de slide
-          return (
-            <div key={index} className="flex-shrink-0 w-[50%] h-[25vh] flex justify-center items-center">
-              <div className="w-[80%] h-[80%] relative">
-                <IKImage
-                  className="object-cover"
-                  urlEndpoint={urlEndpoint}
-                  path={slide}
-                  alt="image"
-                  transformation={[
-                    {
-                      height: "400",
-                      width: "500",
-                    },
-                  ]}
-                />
-              </div>
-            </div>
-          );
-        })}
-      </div>
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
-      <div className="flex relative gap-[3vw] w-full overflow-hidden mt-[3vw]">
-        {slider2.map((slide, index) => {
-          console.log(slide); // Ajout du console.log pour afficher la valeur de slide
-          return (
-            <div key={index} className="flex-shrink-0 w-[50%] h-[25vh] flex justify-center items-center">
-              <div className="w-[80%] h-[80%] relative">
-                <IKImage
-                  className="object-cover"
-                  urlEndpoint={urlEndpoint}
-                  path={slide}
-                  alt="image"
-                  transformation={[
-                    {
-                      height: "400",
-                      width: "500",
-                    },
-                  ]}
-                />
-              </div>
+  const x1 = useTransform(scrollYProgress, [0, 1], [-800, 1000]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [400, -1000]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="flex flex-col relative z-[1] overflow-hidden"
+      style={{ height: "200vh" }} // Ensure there's enough height to scroll
+    >
+      <motion.div
+        style={{ x: x1 }}
+        className="flex relative w-full"
+      >
+        {slider1.map((slide, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-full sm:w-[50%] md:w-[33.33%] h-[50vh] flex justify-center items-center" // Adjusted width to fit all images
+          >
+            <div className="w-[90%] h-[90%] relative">
+              <IKImage
+                className="object-cover rounded-lg" // Added border-radius
+                urlEndpoint={urlEndpoint}
+                path={slide}
+                alt="image"
+                transformation={[
+                  {
+                    height: "800",
+                    width: "600", // Increased width
+                  },
+                ]}
+              />
             </div>
-          );
-        })}
-      </div>
+          </div>
+        ))}
+      </motion.div>
+
+      <motion.div
+        style={{ x: x2 }}
+        className="flex relative w-full mt-[3vw]"
+      >
+        {slider2.map((slide, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-full sm:w-[50%] md:w-[33.33%] h-[50vh] flex justify-center items-center" // Adjusted width to fit all images
+          >
+            <div className="w-[90%] h-[90%] relative">
+              <IKImage
+                className="object-cover rounded-lg" // Added border-radius
+                urlEndpoint={urlEndpoint}
+                path={slide}
+                alt="image"
+                transformation={[
+                  {
+                    height: "800",
+                    width: "600", // Increased width
+                  },
+                ]}
+              />
+            </div>
+          </div>
+        ))}
+      </motion.div>
     </div>
   );
 }

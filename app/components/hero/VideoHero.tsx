@@ -34,7 +34,7 @@ const VideoHero = () => {
           <p className="text-lg font-thin mt-4">Les spécialistes du bar mobile événementiel</p>
         </motion.div>
       </div>
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-12 lg:bottom-14 left-1/2 transform -translate-x-1/2">
         <ScrollDownIcon />
       </div>
     </div>

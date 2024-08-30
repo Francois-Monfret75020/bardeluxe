@@ -7,18 +7,17 @@ const FlyoutLink = ({ name, FlyOutContent, toggleOpen }) => {
 
   const showFlyOut = FlyOutContent && isOpen;
 
-  
   return (
     <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className="h-fit w-fit relative z-50 "
     >
-      <div className=" cursor-pointer  transition relative">
+      <div className=" cursor-pointer hover:text-creme transition relative">
         {name}
         <span
           style={{ transform: showFlyOut ? "scaleX(1)" : "scaleX(0)" }}
-          className="absolute lg:top-6  top-8 -right-2 mx-auto h-1 w-[120%] origin-left rounded-full bg-white transition-transform duration-300 ease-out"
+          className="absolute  top-6 left-0 mx-auto h-1 w-[100%] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
         ></span>
       </div>
       <AnimatePresence>

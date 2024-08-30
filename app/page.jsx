@@ -46,9 +46,9 @@ const Home = () => {
   return (
     <>
       <main className="relative">
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait">
           {isLoaded && <Preloader />}
-        </AnimatePresence>
+        </AnimatePresence> */}
         <section className="h-screen">
           <Slider />
         </section>

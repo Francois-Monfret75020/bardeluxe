@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { prestaData } from "../content/Presta Hero content/prestationContent";
 
-
 const FlyOutMenu = ({ toggleOpen }) => {
   const [data, setData] = useState([]);
 
@@ -21,7 +20,7 @@ const FlyOutMenu = ({ toggleOpen }) => {
         >
           <Link href={item.link} onClick={toggleOpen}>
             <div className="flex flex-col items-center justify-center relative cursor-pointer h-full">
-              <span className=" top-12   text-center bg-opacity-50 text-white hover:text-gray-500 p-1">
+              <span className=" top-12   text-center bg-opacity-50 text-white hover:text-gray-500 lg:hover:text-creme p-1">
                 {item.navTitlle}
               </span>
             </div>
