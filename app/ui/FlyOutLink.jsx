@@ -17,7 +17,7 @@ const FlyoutLink = ({ name, FlyOutContent, toggleOpen }) => {
         {name}
         <span
           style={{ transform: showFlyOut ? "scaleX(1)" : "scaleX(0)" }}
-          className="absolute  top-6 left-0 mx-auto h-1 w-[100%] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
+          className="absolute  md:top-8 md:left-0 top-9 left-0 mx-auto h-1 w-[100%] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
         ></span>
       </div>
       <AnimatePresence>
@@ -31,7 +31,7 @@ const FlyoutLink = ({ name, FlyOutContent, toggleOpen }) => {
             className="absolute bg-greeno top-12 border left-1/2 rounded-s "
           >
             {" "}
-            <div className="absolute -top-6 left-0 h-6 right-0 bg-transparent text-white" />{" "}
+            <div className="absolute  -top-6 left-0 h-6 right-0 bg-transparent text-white" />{" "}
             <FlyOutContent toggleOpen={toggleOpen} />{" "}
           </motion.div>
         )}
