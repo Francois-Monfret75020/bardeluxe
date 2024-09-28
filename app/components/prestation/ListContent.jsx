@@ -3,38 +3,20 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AniamtionText from "../../ui/AniamtionText";
 
-const ListContent = ({ content, height, mobileHeight, show }) => {
+const ListContent = ({ content, show }) => {
   const [windowWidth, setWindowWidth] = useState(0);
 
-  useEffect(() => {
-    // Function to update the window width
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
 
-    // Set initial window width
-    handleResize();
-
-    // Add event listener to update window width on resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div
-      className="flex flex-col w-full h-auto items-center justify-center"
-      style={{
-        height: windowWidth < 768 ? mobileHeight : height,
-      }}
+      className="flex flex-col w-full h-auto items-center justify-center md:mb-20"
+  
     >
       {content.map((item, index) => (
         <div
           id={`title-text-and-image-container${index + 1}`}
-          className={`flex flex-col md:flex-row w-[100vw] h-screen ${
+          className={`flex  flex-col md:flex-row w-[100vw] h-screen ${
             index % 2 === 0 ? "" : "md:flex-row-reverse"
           }`}
           key={index}

@@ -4,6 +4,9 @@ import atelier from "../../../public/atelier.jpg";
 import team from "../../../public/team.jpg";
 import private2 from "../../../public/bar-private2.jpg";
 import mojito from "../../../public/mojito.jpg";
+import piano from "../../../public/pianoBar1.jpg";
+import piano2 from "../../../public/pianoBar2.jpg";
+import team2 from "../../../public/team2.jpg";
 
 //---------------------------------------------MARIAGE---------------------------------------------
 
@@ -105,7 +108,7 @@ export const ListPrestaPro = {
     "Des cours de cocktail pour déguster et s’amuser en même temps",
     "Un protocole sanitaire Covid qui a fait ses preuves",
   ],
-  src: girls,
+  src: team2,
 };
 
 export const ListPrestaProContent = [
@@ -144,7 +147,7 @@ export const ListPrestaPrivate = {
     "Des cours de cocktail pour déguster et s’amuser en même temps",
     "Un protocole sanitaire Covid qui a fait ses preuves",
   ],
-  src: girls,
+  src: team2,
 };
 
 export const ListPrestaPrivateContent = [
@@ -165,3 +168,41 @@ export const ListPrestaPrivateContent = [
   },
 ];
 
+
+//---------------------------------------------PIANO---------------------------------------------
+
+export const HeroPrestaPiano = {
+  title: "NOS PRESTATIONS PIANO BAR !",
+  text: "Nous vous proposons une large gamme de prestations pour vos événements. Découvrez nos bars éphémères, nos animations cocktails, nos ateliers de mixologie et nos services de bar à cocktails.",
+  src: piano,
+  alt : "Un barman préparant des cocktails sophistiqués chez un particulier, avec divers ingrédients et bouteilles en arrière-plan",
+};
+
+export const ListPrestaPiano = {
+  title: "Les prestations de nos privatisations ce sont :",
+  text: [
+    "Des bars à cocktails éphémères et des animations mariage",
+    "Un large choix de cocktails et spiritueux à la carte",
+    "Des cours de cocktail pour déguster et s’amuser en même temps",
+    "Un protocole sanitaire Covid qui a fait ses preuves",
+  ],
+  src: piano2,
+};
+
+export const ListPrestaPianoContent = [
+  {
+    title: "Des bars à cocktails pour la surprise, le goût et l’animation",
+    text: "Nous provoquons la surprise par notre tenu, nos bars décoré à la thématique de votre mariage et par les saveurs qui seront proposés à vos invités.Nous révélons les goûts grâce à notre passion, aux produits que nous utilisons dans nos recettes et par les créations cocktails que nous avons définies ensemble quelques mois avant le grand jour.Notre présence est vectrice d’animation pour votre mariage. Nos élégants bartenders, nos bars éphémères endimanchés, notre verrerie et les multiples produits frais disposés sur notre espace de travail ne manquent pas d’attirer l’oeil de vos convives.",
+    src: mojito,
+  },
+  {
+    title: "Des bars à cocktails pour la surprise, le goût et l’animation",
+    text: "Nous provoquons la surprise par notre tenu, nos bars décoré à la thématique de votre mariage et par les saveurs qui seront proposés à vos invités.Nous révélons les goûts grâce à notre passion, aux produits que nous utilisons dans nos recettes et par les créations cocktails que nous avons définies ensemble quelques mois avant le grand jour.Notre présence est vectrice d’animation pour votre mariage. Nos élégants bartenders, nos bars éphémères endimanchés, notre verrerie et les multiples produits frais disposés sur notre espace de travail ne manquent pas d’attirer l’oeil de vos convives.",
+    src: mojito,
+  },
+  {
+    title: "Des bars à cocktails pour la surprise, le goût et l’animation",
+    text: "Nous provoquons la surprise par notre tenu, nos bars décoré à la thématique de votre mariage et par les saveurs qui seront proposés à vos invités.Nous révélons les goûts grâce à notre passion, aux produits que nous utilisons dans nos recettes et par les créations cocktails que nous avons définies ensemble quelques mois avant le grand jour.Notre présence est vectrice d’animation pour votre mariage. Nos élégants bartenders, nos bars éphémères endimanchés, notre verrerie et les multiples produits frais disposés sur notre espace de travail ne manquent pas d’attirer l’oeil de vos convives.",
+    src: mojito,
+  },
+];

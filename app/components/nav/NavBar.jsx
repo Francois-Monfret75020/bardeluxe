@@ -16,6 +16,8 @@ const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
   const [linkEffect, setlinkEffect] = useState(false);
   const [linkEffect2, setlinkEffect2] = useState(false);
+  const [linkEffect3, setlinkEffect3] = useState(false);
+
   const navRef = useRef(null);
   const hamburgerRef = useRef(null);
 
@@ -40,7 +42,7 @@ const NavBar = () => {
     <>
       {/* Mobile Navbar */}
       <div
-        className=" bg-greeno top-8 right-4 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed lg:hidden "
+        className=" bg-greeno top-8 right-4 h-12 w-12 flex items-center justify-center z-50 rounded-full fixed md:hidden "
         ref={hamburgerRef}
         onClick={zeroScroll}
       >
@@ -69,19 +71,27 @@ const NavBar = () => {
               </Link>
             </div>
 
-            <div className="flex mb:justify-around justify-center  items-center h-[45%] w-[100%] flex-row text-xl gap-8 relative top-[-60px]">
-              <motion.div {...linkAnimation}>
-                <Link href="/info" onClick={toggleOpen}>
-                  Infomation
-                </Link>
-              </motion.div>
-              <motion.div {...linkAnimation} className="opacity-100">
+            <div className="flex mb:justify-around justify-center  items-start h-[45%] w-[80%] flex-col text-xl gap-8 relative top-[-60px]">
+             
+            <motion.div {...linkAnimation} className="opacity-100">
                 <FlyOutLink
                   FlyOutContent={FlyOutMenu}
                   toggleOpen={toggleOpen}
-                  name={"Prestation"}
+                  name={"Vos prestation"}
                 />
               </motion.div>
+             
+              <motion.div {...linkAnimation}>
+                <Link href="/bar" onClick={toggleOpen}>
+                  Vos Bars
+                </Link>
+              </motion.div>
+              <motion.div {...linkAnimation}>
+                <Link href="/info" onClick={toggleOpen}>
+                  Notre Histoire
+                </Link>
+              </motion.div>
+            
               <motion.div {...linkAnimation}>
                 <Link href="/booking" onClick={toggleOpen}>
                   Booking
@@ -125,16 +135,15 @@ const NavBar = () => {
       {/* Desktop Navbar */}
 
       <div
-        className="hidden lg:flex h-[6vh] min-h-[2.5rem] w-full bg-greeno text-white  "
+        className="hidden md:flex h-[7vh] min-h-[2.5rem] w-full bg-greeno text-white  "
         style={{ zIndex: 50 }}
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-8">
           <Link href="/" className="text-lg font-bold hover:text-creme">
             Brand
           </Link>
-          <div className="flex space-x-8">
-            <FlyOutLink FlyOutContent={FlyOutMenu} name={"Prestation"} />
-
+          <div className="flex space-x-12 justify-center  ">
+            <FlyOutLink FlyOutContent={FlyOutMenu} name={"Vos prestations"} />
             <div
               className=" flex flex-col "
               onMouseEnter={() => setlinkEffect(true)}
@@ -144,11 +153,11 @@ const NavBar = () => {
                 href="/info"
                 className=" transition justify-center flex items-center hover:text-creme "
               >
-                Qui sommes-nous ?
+                 Vos bars
               </Link>
               <span
                 style={{ transform: linkEffect ? "scaleX(1)" : "scaleX(0)" }}
-                className=" mx-auto h-1 left-1/2 w-[145px] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
+                className=" mx-auto h-1 left-1/2 w-[66px] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
               ></span>
             </div>
 
@@ -158,13 +167,30 @@ const NavBar = () => {
               onMouseLeave={() => setlinkEffect2(false)}
             >
               <Link
+                href="/info"
+                className=" justify-center flex items-center hover:text-creme "
+              >
+               Notre Histoire
+              </Link>
+              <span
+                style={{ transform: linkEffect2 ? "scaleX(1)" : "scaleX(0)" }}
+                className=" mx-auto h-1 left-1/2 w-[105px] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
+              ></span>
+            </div>
+
+            <div
+              className=" flex flex-col "
+              onMouseEnter={() => setlinkEffect3(true)}
+              onMouseLeave={() => setlinkEffect3(false)}
+            >
+              <Link
                 href="/booking"
                 className=" justify-center flex items-center hover:text-creme"
               >
                 Booking
               </Link>
               <span
-                style={{ transform: linkEffect2 ? "scaleX(1)" : "scaleX(0)" }}
+                style={{ transform: linkEffect3 ? "scaleX(1)" : "scaleX(0)" }}
                 className=" mx-auto h-1 left-1/2 w-[62px] origin-left rounded-full  bg-creme  transition-transform duration-300 ease-out"
               ></span>
             </div>

@@ -20,7 +20,7 @@ const svgStyles = {
   height: "calc(100% + 300px)",
 };
 
-const Preloader = () => {
+const Preloader = ({ visited }) => {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -80,7 +80,6 @@ const Preloader = () => {
             <span className="block w-[10px] h-[10px] bg-white rounded-full mr-[10px]"></span>
             {words[index]}
           </motion.p>
-
           <svg style={svgStyles}>
             <motion.path
               d={initialPath}

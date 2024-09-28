@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const List = ({ title, textArray, src }) => {
   return (
-    <div className="relative flex-col lg:h-[50vh] md:h-[45vh] h-[75vh] flex  items-center justify-center ">
+    <div className="relative flex-col lg:h-[50vh] md:h-[45vh] h-[75vh] flex  items-center justify-center md:mb-20 ">
       <Image src={src} alt="Background Image" fill className="object-cover" />
       <div className="relative flex flex-col p-4 h-full w-full items-center justify-center ">
         <div className="flex items-center justify-center w-full ">
-          <div className="bg-creme font-yeseva font-bold  p-6 h-[12vh] w-auto lg:text-3xl md:text-3xl text-xl text-center flex items-center justify-center relative top-4 md:top- rounded-sm">
+          <div className="bg-creme font-yeseva font-bold  p-6 h-auto sm:h-[100px] sm:w-[800px] lg:text-3xl md:text-3xl text-lg text-center flex items-center justify-center relative top-4 md:top- rounded-sm">
             <h2 className="title">{title}</h2>
           </div>
         </div>
@@ -27,7 +27,7 @@ const List = ({ title, textArray, src }) => {
               <div className="text-2xl font-thin flex items-center justify-center min-w-[2em]">
                 1
               </div>
-              <div className="flex justify-center items-center font-extralight  text-[12px]  p-4 min-w-[5em] max-w-[20rem] lg:text-center">
+              <div className="flex justify-center items-center font-extralight  text-[12px]  p-4 min-w-[5em] max-w-[20rem] lg:text-start">
                 <p className="text">{textArray[0]} </p>
               </div>
             </a>

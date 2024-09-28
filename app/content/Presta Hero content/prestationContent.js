@@ -2,6 +2,8 @@ import team from "../../../public/team.jpg";
 import mariage from "../../../public/marriage.jpg";
 import cocktail from "../../../public/atelier.jpg";
 import private2 from "../../../public/bar-private2.jpg";
+import piano from "../../../public/pianoBar1.jpg";
+import piano2 from "../../../public/pianoBar2.jpg";
 
 export const prestaData = [
   {
@@ -36,4 +38,12 @@ export const prestaData = [
     link: "/prestation/atelier",
     navTitlle: "Atelier",
   },
+  {
+    src: piano2,
+    alt: "Un atelier de création de cocktails avec des participant souriant, mélangeant des ingrédients et suivant les instructions du barman.",
+    description: "PIANO BAR",
+    buttonText: "RESERVER UN SHOW",
+    link: "/prestation/piano-bar",
+    navTitlle: "Piano Bar",
+  }
 ];

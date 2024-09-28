@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import BgImgBtn from "../ui/BgImgBtn";
 
 const Card = ({ src, alt, description, buttonText, href }) => {
+  const [linkEffect, setLinkEffect] = useState(false);
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -15,8 +17,15 @@ const Card = ({ src, alt, description, buttonText, href }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
 
   return (
-    <div id="card-container" className="flex flex-col w-full justify-center items-center">
-      <div ref={container} id="card" className="h-[400px] xl:[400px] w-4/5 flex justify-center">
+    <div
+      id="card-container"
+      className="flex flex-col w-full justify-center items-center mb-8"
+    >
+      <div
+        ref={container}
+        id="card"
+        className="h-[400px] xl:[400px] w-4/5 flex justify-center"
+      >
         <div
           id="image-container"
           className="w-full h-full flex relative overflow-hidden justify-center"
@@ -36,11 +45,12 @@ const Card = ({ src, alt, description, buttonText, href }) => {
               <p className="text-white font-extralight text-2xl mb-8 text-center">
                 {description}
               </p>
-              <Link href={href} legacyBehavior>
-                <a className="text-white py-2 px-4 text-lg border-2 border-white font-thin">
-                  {buttonText}
-                </a>
-              </Link>
+              <div
+                onMouseEnter={() => setLinkEffect(true)}
+                onMouseLeave={() => setLinkEffect(false)}
+              >
+                <BgImgBtn href={href} text={buttonText} event={linkEffect} />
+              </div>
             </div>
           </motion.div>
         </div>
