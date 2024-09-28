@@ -62,7 +62,7 @@ const NavBar = () => {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="fixed flex h-[100vh] bg-black bg-opacity-90 text-white items-center justify-around flex-col w-full z-40 top-0 left-0"
+            className="fixed flex h-[100vh] bg-black bg-opacity-90 text-white items-center justify-evenly flex-col w-full z-40 top-0 left-0"
           >
             <div className="flex items-center justify-start h-[10%]  text-gray-500 border-b border-gray-500 w-[80%]">
               {" "}
@@ -98,7 +98,7 @@ const NavBar = () => {
                 </Link>
               </motion.div>
             </div>
-            <div className="flex justify-center h-1/8 text-xs gap-8 items-center">
+            <div className="flex text-xs gap-8 items-center">
               <motion.div
                 {...linkAnimation}
                 className="flex items-center gap-1"
