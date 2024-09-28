@@ -71,7 +71,7 @@ const NavBar = () => {
               </Link>
             </div>
 
-            <div className="flex mb:justify-around justify-center  items-start h-[45%] w-[80%] flex-col text-xl gap-8 relative top-[-60px]">
+            <div className="flex mb:justify-around justify-center  items-start h-[35%] w-[80%] flex-col text-xl gap-8 relative ">
              
             <motion.div {...linkAnimation} className="opacity-100">
                 <FlyOutLink
