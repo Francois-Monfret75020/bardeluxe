@@ -2,24 +2,27 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/nav/NavBar.jsx";
-import BookingButton from "./ui/BookingButton";
-
+import ConditionalBookingButton from "./components/ConditionalBoookingBtn";
+import localFont from '@next/font/local';
 import { Montserrat, Oswald } from "next/font/google";
 
+const myFont = localFont({
+  src: '../public/font/pricedown.otf',
+  variable: '--gta-font',
+});
+
 export const montserrat = Montserrat({
-    subsets: ["latin"],
-    weight: ["100", "200", "300", "400", "500", "600", "700"],
-    style: ["normal", "italic"],
-    variable: "--font-montserrat",
-  });
-  
-  export const oswald = Oswald({
-    weight: ["200", "300", "400", "500", "600", "700"],
-    subsets: ["latin"],
-    variable: "--font-oswald",
-  });
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-montserrat",
+});
 
-
+export const oswald = Oswald({
+  weight: ["200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-oswald",
+});
 
 export const metadata: Metadata = {
   title: "Bar événementiel mariage",
@@ -33,23 +36,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" className={myFont.className} suppressHydrationWarning={true}>
       <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
         {/* Add structured data here */}
       </head>
       <body
         suppressHydrationWarning={true}
         className={`${montserrat.variable} ${oswald.variable}`}
       >
-        <header className="sticky top-0 z-10">
+        <header className="sticky top-0 w-full z-10">
           <NavBar />
         </header>
         <main className="flex flex-col ">{children}</main>
-        <div className="fixed bottom-4 right-4 z-50  opacity-80 lg:top-auto lg:bottom-6">
-          <BookingButton text="Booking" />
-        </div>
-        <footer className="h-[600px] sm:h-[300px] p-4 bg-creme">
+        <ConditionalBookingButton />
+        <footer className="h-auto  p-4 bg-black">
           <Footer />
         </footer>
       </body>

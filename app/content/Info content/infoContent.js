@@ -1,7 +1,7 @@
 import medericFlame from "../../../public/medericFlame.jpeg";
 import cocktail from "../../../public/atelier.jpg";
-import mede from "../../../public/medeBG.jpeg";
-import mede2 from "../../../public/medeService.jpeg";
+import mede from "../../../public/medericFlame.jpeg";
+import mede2 from "../../../public/medericFlame.jpeg";
 
 export const infoData = {
   src: medericFlame,

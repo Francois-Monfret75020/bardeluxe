@@ -1,25 +1,24 @@
 // FlyoutLink.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import NavFlyOutNeonBtn from "../ui/NavFlyOutNeonBtn";
 
-const FlyoutLink = ({ name, FlyOutContent, toggleOpen }) => {
+const FlyoutLink = ({ name, FlyOutContent, toggleOpen, pathname, href, onClick }) => {
   const [isOpen, setOpen] = useState(false);
 
   const showFlyOut = FlyOutContent && isOpen;
 
+  
+
   return (
     <div
       onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      className="h-fit w-fit relative z-50 "
+      onMouseLeave={() => setOpen(true)}
+      className="md:min-w-[5rem] h-fit w-fit relative z-50 "
+      id="flyout-link"
     >
-      <div className=" cursor-pointer hover:text-creme transition relative">
-        {name}
-        <span
-          style={{ transform: showFlyOut ? "scaleX(1)" : "scaleX(0)" }}
-          className="absolute  md:top-8 md:left-0 top-9 left-0 mx-auto h-1 w-[100%] origin-left rounded-full bg-creme transition-transform duration-300 ease-out"
-        ></span>
-      </div>
+      <NavFlyOutNeonBtn text={name} href={href} pathname={pathname} event={isOpen} onClick={onClick} />
+      
       <AnimatePresence>
         {showFlyOut && (
           <motion.div
@@ -28,11 +27,10 @@ const FlyoutLink = ({ name, FlyOutContent, toggleOpen }) => {
             exit={{ opacity: 0, y: 20 }}
             style={{ x: "-50%" }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute bg-greeno top-12 border left-1/2 rounded-s "
+            className="absolute bg-blacko rounded-md -top-[-4rem] md:-top-[-4.3rem] border-2   border-neon left-[6rem] md:left-1/2"
           >
-            {" "}
-            <div className="absolute  -top-6 left-0 h-6 right-0 bg-transparent text-white" />{" "}
-            <FlyOutContent toggleOpen={toggleOpen} />{" "}
+            <div className="absolute -top-6 left-0 h-6 right-0 text-black" />
+            <FlyOutContent toggleOpen={toggleOpen} />
           </motion.div>
         )}
       </AnimatePresence>

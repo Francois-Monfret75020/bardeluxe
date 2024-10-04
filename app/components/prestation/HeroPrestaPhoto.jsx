@@ -7,7 +7,6 @@ const HeroPresta = ({ src, height, text, alt, info }) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  console.log(info);
 
   return (
     <div ref={ref} className="relative h-[70vh]" style={{ height: height }}>

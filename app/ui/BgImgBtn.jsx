@@ -1,20 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const BgImgBtn = ({ href , text , event }) => {
-
-  console.log(event);
-  
-
+const BgImgBtn = ({ href, text, event }) => {
   return (
-    <div
-
-      className="relative border-2  cursor-pointer bg-transparent overflow-hidden text-white py-2 px-4 text-lg  border-white font-thin"
-    >
+    <div className="relative border-2 cursor-pointer bg-transparent overflow-hidden  py-2 px-4 text-lg border-white font-thin neon-text-white neon-button">
       <motion.div
-        className="absolute inset-0 bg-white origin-left"
+        className="absolute inset-0 bg-neon origin-left"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: event ? 1 : 0 }}
         transition={{ duration: 0.5 }}
@@ -24,7 +17,7 @@ const BgImgBtn = ({ href , text , event }) => {
           className="relative"
           initial={{ color: "white" }}
           animate={{ color: event ? "black" : "white" }}
-          transition={{ duration: 5 }}
+          transition={{ duration: 0.5 }}
         >
           {text}
         </motion.span>

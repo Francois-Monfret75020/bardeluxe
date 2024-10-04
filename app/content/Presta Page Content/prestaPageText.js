@@ -1,12 +1,12 @@
-import mariage from "../../../public/marriage3.jpg";
+import mariage from "../../../public/gtaCouple.png";
 import girls from "../../../public/girls.jpg";
 import atelier from "../../../public/atelier.jpg";
-import team from "../../../public/team.jpg";
+import team from "../../../public/gtaTeam.png";
 import private2 from "../../../public/bar-private2.jpg";
 import mojito from "../../../public/mojito.jpg";
-import piano from "../../../public/pianoBar1.jpg";
-import piano2 from "../../../public/pianoBar2.jpg";
-import team2 from "../../../public/team2.jpg";
+import piano from "../../../public/gtaPiano.png";
+import piano2 from "../../../public/gtaPrivateMobile.png";
+import team2 from "../../../public/gtaTeam.png";
 
 //---------------------------------------------MARIAGE---------------------------------------------
 
@@ -206,3 +206,32 @@ export const ListPrestaPianoContent = [
     src: mojito,
   },
 ];
+
+
+
+//---------------------------------------------GAMES---------------------------------------------
+
+export const PrestaTextGames = 
+  {
+    title: "Des Extras pour une Ambiance Unique",
+    text: "Pour vos événements, nous proposons des prestations de bar ainsi que des animations uniques : bornes d'arcade rétro, baby-foot, et piano bar. Ces options ajoutent une touche de convivialité et d'élégance, créant des moments inoubliables",
+    
+  }
+
+  export const GamesContent = [
+  {
+    url : ["test" , "test2", "test3"], 
+    title: "Bayby foot",
+    text: "Un baby foot pour une ambiance conviviale ",
+    
+  },  {
+    url : ["test" , "test2", "test3"], 
+    title: "Bayby foot",
+    text: "Un baby foot pour une ambiance conviviale ",
+    
+  },  {
+    url : ["test" , "test2", "test3"], 
+    title: "Bayby foot",
+    text: "Un baby foot pour une ambiance conviviale ",
+    
+  }]

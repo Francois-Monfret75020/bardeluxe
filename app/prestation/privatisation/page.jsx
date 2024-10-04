@@ -10,20 +10,29 @@ import { ListPrestaPrivateContent } from "../../content/Presta Page Content/pres
 
 const Presta = () => {
   return (
-    
-    <main className="min-h-screen w-full">
-      <HeroPrestaPhoto src={HeroPrestaPrivate.src} alt={HeroPrestaPrivate.alt} info={false}/>
-      <HeroPrestaText
-        title={HeroPrestaPrivate.title}
-        text={HeroPrestaPrivate.text}
+    <main className="min-h-screen bg-black w-full">
+      <HeroPrestaPhoto
+        src={HeroPrestaPrivate.src}
+        alt={HeroPrestaPrivate.alt}
+        info={false}
       />
+
+      <div
+        className="w-full h-auto flex justify-center items-center"
+        id="compenent-text-container"
+      >
+        <HeroPrestaText
+          title={HeroPrestaPrivate.title}
+          text={HeroPrestaPrivate.text}
+        />
+      </div>
       <List
         src={ListPrestaPrivate.src}
         title={ListPrestaPrivate.title}
         textArray={ListPrestaPrivate.text}
       />
 
-<ListContent  content={ListPrestaPrivateContent} />
+      <ListContent content={ListPrestaPrivateContent} />
     </main>
   );
 };

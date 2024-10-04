@@ -1,9 +1,9 @@
-import team from "../../../public/team.jpg";
-import mariage from "../../../public/marriage.jpg";
-import cocktail from "../../../public/atelier.jpg";
-import private2 from "../../../public/bar-private2.jpg";
-import piano from "../../../public/pianoBar1.jpg";
-import piano2 from "../../../public/pianoBar2.jpg";
+import team from "../../../public/gtaTeam.png";
+import mariage from "../../../public/gtaCoupleMobile.png";
+import cocktail from "../../../public/gtaAtelier.png";
+import piano from "../../../public/gtaPiano.png";
+import piano2 from "../../../public/gtaPiano.png";
+import privatisation from "../../../public/gtaPrivate.png";
 
 export const prestaData = [
   {
@@ -17,16 +17,16 @@ export const prestaData = [
   {
     src: team,
     alt: "Des collègues de bureau en tenue professionnelle trinquant avec des verres de champagne lors d'une célébration",
-    description: "ENTREPISE ET TEAM BUILDING",
-    buttonText: "POUR L'ENTREPRISE",
+    description: "TEAM BUILDING",
+    buttonText: "ENTREPRISE",
     link: "/prestation/entreprise",
     navTitlle: "Entreprise",
   },
   {
-    src: private2,
+    src: privatisation,
     alt: "Un barman préparant des cocktails sophistiqués chez un particulier, avec divers ingrédients et bouteilles en arrière-plan",
     description: "PRIVATISATION À DOMICILE",
-    buttonText: "JE SOUHAITE PRIVATISER",
+    buttonText: "PRIVATISER",
     link: "/prestation/privatisation",
     navTitlle: "Privatisation",
   },

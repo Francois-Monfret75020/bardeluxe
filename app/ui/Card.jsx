@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import BgImgBtn from "../ui/BgImgBtn";
+import BgImgBtn from "./BgImgBtn";
 
 const Card = ({ src, alt, description, buttonText, href }) => {
   const [linkEffect, setLinkEffect] = useState(false);
@@ -38,10 +38,10 @@ const Card = ({ src, alt, description, buttonText, href }) => {
             <Image
               src={src}
               alt={alt}
-              fill
-              className="absolute inset-0 object-cover"
+        fill
+                 className="absolute inset-0 w-full h-full "
             />
-            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50">
+            <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30">
               <p className="text-white font-extralight text-2xl mb-8 text-center">
                 {description}
               </p>
@@ -49,7 +49,7 @@ const Card = ({ src, alt, description, buttonText, href }) => {
                 onMouseEnter={() => setLinkEffect(true)}
                 onMouseLeave={() => setLinkEffect(false)}
               >
-                <BgImgBtn href={href} text={buttonText} event={linkEffect} />
+                <BgImgBtn href={href} text={buttonText} event={linkEffect} className=""/>
               </div>
             </div>
           </motion.div>

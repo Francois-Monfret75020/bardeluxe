@@ -10,9 +10,18 @@ import { ListPrestaProContent } from "../../content/Presta Page Content/prestaPa
 
 const Presta = () => {
   return (
-    <main className="min-h-screen w-full">
-      <HeroPrestaPhoto src={HeroPrestaPro.src}  alt={HeroPrestaPro.alt} info={false}/>
-      <HeroPrestaText title={HeroPrestaPro.title} text={HeroPrestaPro.text} />
+    <main className="min-h-screen bg-black w-full">
+      <HeroPrestaPhoto
+        src={HeroPrestaPro.src}
+        alt={HeroPrestaPro.alt}
+        info={false}
+      />
+      <div
+        className="w-full h-auto flex justify-center items-center"
+        id="compenent-text-container"
+      >
+        <HeroPrestaText title={HeroPrestaPro.title} text={HeroPrestaPro.text} />
+      </div>
       <List
         src={ListPrestaPro.src}
         title={ListPrestaPro.title}

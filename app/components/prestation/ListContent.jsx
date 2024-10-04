@@ -10,7 +10,7 @@ const ListContent = ({ content, show }) => {
 
   return (
     <div
-      className="flex flex-col w-full h-auto items-center justify-center md:mb-20"
+      className="flex flex-col w-full bg-black h-auto items-center justify-center md:mb-20"
   
     >
       {content.map((item, index) => (
@@ -28,14 +28,14 @@ const ListContent = ({ content, show }) => {
             {show && (
               <div
                 id="number"
-                className="flex items-center justify-center font-extralight absolute md:text-5xl text-3xl text-red-200 md:top-10 md:left-8 lg:left-50 top-0 left-2"
+                className="flex items-center justify-center font-extralight md:absolute md:text-5xl text-3xl text-red-200 md:top-10 md:left-12 lg:left-50 top-0 left-2"
               >
                 {index + 1}
               </div>
             )}
             <div
               id="titlte"
-              className="flex flex-col items-start justify-center uppercase font-extralight mx-auto w-[85%]  text-center md:text-start"
+              className="flex neon-text flex-col items-start justify-center uppercase font-extralight mx-auto w-[85%]  text-center md:text-start"
             >
               <AniamtionText
                 text={item.title}
@@ -45,15 +45,14 @@ const ListContent = ({ content, show }) => {
               />
 
               {show && (
-                <div className="h-[10vh] w-4/6 flex-row" id="bar">
-                  <div className="flex w-5/6 h-0.5 bg-creme relative top-10"></div>
-                  <div className="flex w-3/6 h-0.5 bg-creme relative top-3 bg-transparent"></div>
-                  <div className="flex w-5/6 h-0.5 bg-creme relative top-10"></div>
+                <div className="h-[10vh] md:w-4/6 flex  md:justify-start justify-center w-full flex-row gap-y-2" id="bar">
+                  <div className="flex md:w-5/6 w-1/3 h-0.5 neon-button relative top-10"></div>
+   
                 </div>
               )}
             </div>
             <div id="text" className="w-full md:w-[50vw]">
-              <div className="text-gray-500 mx-auto w-[85%] leading-8 text-sm font-extralight  text-center md:text-start">
+              <div className="neon-text-white mx-auto w-[85%] leading-8 text-sm font-extralight  text-center md:text-start">
                 <p className="text">{item.text}</p>
               </div>
             </div>

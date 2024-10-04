@@ -15,10 +15,10 @@ const BookingFull = () => {
         className=" flex flex-col h-full lg:h-screen   items-center justify-center  lg:w-1/2  text-center lg:mt-10"
       >
         {" "}
-        <h2 className="p-8 py-8 mt-4 font-bold tracking-tight text-xl pt-20 lg:pt-10 ">
+        <h2 className="p-8 py-8 mt-4 font-bold tracking-tight text-xl pt-20 lg:pt-10 font-oswald neon-title-green">
           Contactez-nous
         </h2>
-        <p className="p-4 lg:w-[70%]  lg:height-[40%] w-[85%] leading-8 relative lg:-bottom-[2rem]">
+        <p className="p-4 lg:w-[70%]  lg:height-[40%] w-[85%] leading-8 relative lg:-bottom-[2rem] neon-text-white">
           Pour obtenir un devis rapidement, il suffit de nous contacter via
           WhatsApp ou par telephone, email. Vous pouvez aussi directement
           resever via Calendly. Nous serons ravis de répondre a toute vos
@@ -31,8 +31,8 @@ const BookingFull = () => {
           className=" w-full h-full   items-center flex flex-col justify-center mt-8 gap-y-4 lg:relative lg:top-[20px]"
         >
           <span
-            className=" flex items-center justify-center p-4 rounded-md gap-x-4 w-[30%] min-w-[270px] "
-            style={{ backgroundColor: "#42E45F" }}
+            className=" neon-button bg-neon hover:text-black flex items-center justify-center p-4 rounded-md gap-x-4 w-[30%] min-w-[270px] "
+         
           >
             {" "}
             <IoLogoWhatsapp size={25} />
@@ -44,12 +44,12 @@ const BookingFull = () => {
               Via WhatsApp
             </a>
           </span>
-          <span className=" flex items-center justify-center p-4 rounded-md gap-x-4 bg-creme w-[30%] min-w-[270px]">
+          <span className=" flex items-center justify-center p-4 rounded-md gap-x-4 neon-button hover:text-black  bg-neon w-[30%] min-w-[270px]">
             {" "}
             <LuPhoneCall size={25} />
             <a href="tel:+33631995330">06 31 99 53 30</a>
           </span>
-          <span className=" flex items-center justify-center p-4 rounded-md gap-x-4 bg-creme w-[30%]  min-w-[270px]">
+          <span className=" flex items-center justify-center p-4 rounded-md gap-x-4 neon-button hover:text-black  bg-neon w-[30%]  min-w-[270px]">
             {" "}
             <MdOutlineMailOutline size={25} />
             <a href="mailto:cocktail@event.com">cocktail@event.com</a>

@@ -30,8 +30,8 @@ const VideoHero = () => {
           animate={{ opacity: isInView ? 1 : 0 }}
           transition={{ duration: 1, delay: 3.2 }}
         >
-          <h1 className="text-4xl font-thin">Cocktails Events</h1>
-          <p className="text-lg font-thin mt-4">Les spécialistes du bar mobile événementiel</p>
+          <h1 className="text-6xl font-thin neon-title-white">Cocktails Events</h1>
+          <p className="text-lg font-thin mt-4 neon-text-white">Les spécialistes du bar mobile événementiel</p>
         </motion.div>
       </div>
       <div className="absolute bottom-12 lg:bottom-14 left-1/2 transform -translate-x-1/2">

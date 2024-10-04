@@ -32,7 +32,9 @@ const BookingButton = ({ text }) => {
   }, []);
 
   return (
-    <Link href="/booking" passHref>
+
+
+    <Link href="/booking" passHref className="" >
       <motion.button
         initial={{ y: 0 }}
         animate={{ y: 5 }}
@@ -43,12 +45,14 @@ const BookingButton = ({ text }) => {
           repeat: Infinity,
           repeatType: "reverse",
         }}
+       
+        className="px-6 py-2 flex justify-center text-sm w-24 border-2 text-white bg-black  transform  transition duration-400 border-neon font-thin neon-button-booking "
         style={{ opacity }}
-        className="px-6 py-2 bg-greeno text-sm  text-white rounded transform hover:-translate-y-1 transition duration-400 font-thin"
       >
         {text}
       </motion.button>
     </Link>
+  
   );
 };
 

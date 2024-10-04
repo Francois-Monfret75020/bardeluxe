@@ -10,19 +10,36 @@ import { ListPrestaAtelierContent } from "../../content/Presta Page Content/pres
 
 const Presta = () => {
   return (
-    
-    <main className="min-h-screen w-full">
-      <HeroPrestaPhoto src={HeroPrestaAtelier.src}  alt={HeroPrestaAtelier.alt} info={false}/>
-      <HeroPrestaText
-        title={HeroPrestaAtelier.title}
-        text={HeroPrestaAtelier.text}
+    <main className="min-h-screen bg-black w-full">
+      <HeroPrestaPhoto
+        src={HeroPrestaAtelier.src}
+        alt={HeroPrestaAtelier.alt}
+        info={false}
       />
+
+      <div
+        className="w-full h-auto flex justify-center bg-black items-center"
+        id="compenent-text-container"
+      >
+        <HeroPrestaText
+          title={HeroPrestaAtelier.title}
+          text={HeroPrestaAtelier.text}
+     
+        />
+      </div>
+      <div
+        className="w-full h-auto  bg-black items-center"
+        id="compenent-text-container"
+      >
       <List
         src={ListPrestaAtelier.src}
         title={ListPrestaAtelier.title}
         textArray={ListPrestaAtelier.text}
+    
       />
-            <ListContent  content={ListPrestaAtelierContent} />
+      </div>
+      <ListContent content={ListPrestaAtelierContent}
+          show={true}  />
     </main>
   );
 };
